@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-header',
