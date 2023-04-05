@@ -11,7 +11,6 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class TasksComponent {
 
-
   tasks: Task[] = [];
 
   constructor(private taskService: TaskService) { }
@@ -33,6 +32,12 @@ export class TasksComponent {
     task.reminder = !task.reminder;
     return this.taskService.updateTaskReminder(task)
       .subscribe()
-    }
+  }
+
+  addTask(task: Task) {
+    this.taskService.addTask(task).subscribe((task) =>
+      this.tasks.push(task)
+    );
+  }
 
 }
